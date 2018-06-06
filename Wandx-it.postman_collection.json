@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "3e4c9843-fb05-498f-a46c-13471905c759",
+		"name": "Wandx-it",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"emp_id\": \"WX103\",\n\t\"emp_name\":\"Shikha Jain\",\n\t\"dept_name\":\"Digital\",\n\t\"emp_countrycode\": \"+91\",\n\t\"emp_contactnumber\": \"9886856190\",\n\t\"emp_address\":\"BTM Layout,Bangalore\",\n\t\"role\":\"Developer\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8420/api/prelogin/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8420",
+					"path": [
+						"api",
+						"prelogin",
+						"v1",
+						"register"
+					]
+				},
+				"description": "endpoint for registering new user with role(admin,developer)"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"emp_id\":\"WX101\",\n\t\"password\":\"12345\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8420/api/prelogin/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8420",
+					"path": [
+						"api",
+						"prelogin",
+						"v1",
+						"login"
+					]
+				},
+				"description": "User can login to the system using : \nemp_id\npassword"
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Otp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"emp_id\":\"WX101\",\n\t\"otp\":\"M29OI6R0\",\n\t\"newPassword\": \"12345\",\n\t\"confirmPassword\": \"12345\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8420/api/prelogin/v1/verifyOtp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8420",
+					"path": [
+						"api",
+						"prelogin",
+						"v1",
+						"verifyOtp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"emp_id\":\"WX101\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8420/api/prelogin/v1/forgotPassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8420",
+					"path": [
+						"api",
+						"prelogin",
+						"v1",
+						"forgotPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Asset",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Access-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FjdGl2ZSI6dHJ1ZSwiX2lkIjoiNWIxNWVjMDNiMjgwZDQyZTA4ZDIyMTFkIiwiZW1wX2lkIjoiV1gxMDEiLCJlbXBfbmFtZSI6IkdvdmluZCBBZ3Jhd2FsIiwiZGVwdF9uYW1lIjoiRGlnaXRhbCIsImVtcF9jb250YWN0bnVtYmVyIjoiOTg4Njg1NjE5MCIsImVtcF9hZGRyZXNzIjoiS29ybWFuZ2FsYSA4dGggYmxvY2ssQmFuZ2Fsb3JlIiwicm9sZSI6IkFkbWluIiwiY3JlYXRlZEF0IjoiMjAxOC0wNi0wNVQwMTo0ODo1MS44MTFaIiwidXBkYXRlZEF0IjoiMjAxOC0wNi0wNVQwMjo0Mjo1MS4yMDVaIiwibGFzdGxvZ2luIjoiMjAxOC0wNi0wNVQwMjo0Mjo1MS4yMDVaIiwib3RwIjpudWxsLCJpYXQiOjE1MjgxNjY1NzEsImV4cCI6MTUyODI1Mjk3MX0._vFk1zfD0vlqKwksDKA0_NwfVsNB2cjh5HYRz5Td--4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"asset_name\": \"HP 245 G5 Y0T72PA Laptop\" ,\n    \"asset_tag\": \"laptop\",\n    \"asset_serial_no\": \"3123803810381\",\n    \"asset_brand\": \"HP\",\n    \"asset_description\": {\n    \t\"Processor\": \"AMD A6(7th Gen)\",\n\t\t\"RAM\" : \"4 GB DDR3L\",\n\t\t\"OS Type\": \"DOS\",\n\t\t\"Storage Memory\": \"500 GB\",\n\t\t\"Screen Size\": \"14 inch (35.56 cm)\",\n\t\t\"Graphics\": \"AMD Radeon R4 DDR4\"\n    },\n    \"asset_purchased_price\": 19750,\n    \"vendor_det\": {\n    \t\"name\": \" Prakash Hardware\"\n    },\n    \"warranty_period\": \"1 year\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8420/api/v1/asset/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8420",
+					"path": [
+						"api",
+						"v1",
+						"asset",
+						"create"
+					]
+				},
+				"description": "Admin can create asset using this endpoint."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset By Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Access-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FjdGl2ZSI6dHJ1ZSwiX2lkIjoiNWIxNWVjMDNiMjgwZDQyZTA4ZDIyMTFkIiwiZW1wX2lkIjoiV1gxMDEiLCJlbXBfbmFtZSI6IkdvdmluZCBBZ3Jhd2FsIiwiZGVwdF9uYW1lIjoiRGlnaXRhbCIsImVtcF9jb250YWN0bnVtYmVyIjoiOTg4Njg1NjE5MCIsImVtcF9hZGRyZXNzIjoiS29ybWFuZ2FsYSA4dGggYmxvY2ssQmFuZ2Fsb3JlIiwicm9sZSI6IkFkbWluIiwiY3JlYXRlZEF0IjoiMjAxOC0wNi0wNVQwMTo0ODo1MS44MTFaIiwidXBkYXRlZEF0IjoiMjAxOC0wNi0wNVQwMjo0Mjo1MS4yMDVaIiwibGFzdGxvZ2luIjoiMjAxOC0wNi0wNVQwMjo0Mjo1MS4yMDVaIiwib3RwIjpudWxsLCJpYXQiOjE1MjgxNjY1NzEsImV4cCI6MTUyODI1Mjk3MX0._vFk1zfD0vlqKwksDKA0_NwfVsNB2cjh5HYRz5Td--4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"asset_name\": \"Logitech\" ,\n    \"asset_tag\": \"laptop\",\n    \"asset_serial_no\": \"485344580\",\n    \"asset_brand\": \"Logitech\",\n    \"assets_description\": {\n    \t\"Processor\": \"i7\",\n\t\t\"RAM\" : \"8 GB DDR3L\",\n\t\t\"OS Type\": \"Window 10\",\n\t\t\"Storage Memory\": \"1 TB SSD\",\n\t\t\"Screen Size\": \"15.5 inch (35.56 cm)\",\n\t\t\"Graphics\": \"AMD Radeon R4 DDR4\"\n    },\n    \"asset_purchased_price\": 77000,\n    \"vendor_details\": {\n    \t\"name\": \" Prakash Hardware\"\n    },\n    \"warranty_period\": \"1 year\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8420/api/v1/asset/get?assetId=5b15ff9139e48a1290686f35",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8420",
+					"path": [
+						"api",
+						"v1",
+						"asset",
+						"get"
+					],
+					"query": [
+						{
+							"key": "assetId",
+							"value": "5b15ff9139e48a1290686f35"
+						}
+					]
+				},
+				"description": "Admin can get asset details using this endpoint."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Access-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FjdGl2ZSI6dHJ1ZSwiX2lkIjoiNWIxNWVjMDNiMjgwZDQyZTA4ZDIyMTFkIiwiZW1wX2lkIjoiV1gxMDEiLCJlbXBfbmFtZSI6IkdvdmluZCBBZ3Jhd2FsIiwiZGVwdF9uYW1lIjoiRGlnaXRhbCIsImVtcF9jb250YWN0bnVtYmVyIjoiOTg4Njg1NjE5MCIsImVtcF9hZGRyZXNzIjoiS29ybWFuZ2FsYSA4dGggYmxvY2ssQmFuZ2Fsb3JlIiwicm9sZSI6IkFkbWluIiwiY3JlYXRlZEF0IjoiMjAxOC0wNi0wNVQwMTo0ODo1MS44MTFaIiwidXBkYXRlZEF0IjoiMjAxOC0wNi0wNVQwMjo0Mjo1MS4yMDVaIiwibGFzdGxvZ2luIjoiMjAxOC0wNi0wNVQwMjo0Mjo1MS4yMDVaIiwib3RwIjpudWxsLCJpYXQiOjE1MjgxNjY1NzEsImV4cCI6MTUyODI1Mjk3MX0._vFk1zfD0vlqKwksDKA0_NwfVsNB2cjh5HYRz5Td--4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8420/api/v1/asset/list?tag=laptop&brand=DELL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8420",
+					"path": [
+						"api",
+						"v1",
+						"asset",
+						"list"
+					],
+					"query": [
+						{
+							"key": "tag",
+							"value": "laptop"
+						},
+						{
+							"key": "brand",
+							"value": "DELL"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
